@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
     <title>Navbar</title>
+    <!-- Unicons-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/solid.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,8 +14,21 @@
         <!-- navigation bar -->
         <nav class="nav">
             <a href="#" class="nav-logo">SpikeZone</a>
-            <ul class="nav-menu"><li class="nav-item"></li></ul> <!-- to make the navbar horizontal -->
+            <ul class="nav-menu">
+                <li class="nav-item"></li>
+            </ul> <!-- to make the navbar horizontal -->
             <button class="button" id="form-open">Login</button>
+            <div class="user-profile hidden dropdown">
+                <!-- NOTE: only used as template -->
+                <img class="pfp" src="raze.jpg">
+                <div class="nav-username">mar_v</div>
+                
+                <div class="dropdown-content">
+                    <a href="#"> Profile</a>
+                    <a href="#"> Log Out</a>
+                </div>
+                
+            </div>
         </nav>
     </header>
 
@@ -26,14 +40,15 @@
             <div class="form login-form">
                 <form action="#">
                     <h2>Login</h2>
-                    <!-- input email -->
+                    <div id="login-error-msg"></div>
+                    <!-- input username -->
                     <div class="input-box">
-                        <input type="email" placeholder="Username or email" required>
+                        <input id="login-username" type="text" placeholder="Username" required>
                         <!-- <i class="uil uil-envelope-alt email"></i> -->
                     </div>
                     <!-- input password -->
                     <div class="input-box">
-                        <input type="password" placeholder="Password" required>
+                        <input id="login-pw" type="password" placeholder="Password" required>
                         <!-- <i class="uil uil-lock password"></i>
                         <i class="uil uil-eye-slash pw_hide"></i> -->
                     </div>
@@ -45,38 +60,36 @@
                         <a href="#" class="forgot_pw">Forgot password?</a>
                     </div>
                     <!-- login button -->
-                    <button class="button">Log In</button>
+                    <button id="log-submit" class="button">Log In</button>
                     <!-- register button -->
                     <div class="login-signup">Don't have an account? <a href="#" id="signup">Sign Up</a></div>
                 </form>
+            </div>
             <!-- sign up form -->
             <div class="form signup-form">
                 <form action="#">
                     <h2>Sign Up</h2>
                     <!-- input username -->
+                    <div id="sign-error-msg"></div>
                     <div class="input-box">
-                        <input type="text" placeholder="Username" required>
+                        <input id="username" type="text" placeholder="Username" required>
                         <!-- <i class="uil uil-envelope-alt email"></i> -->
                     </div>
-                    <!-- input email -->
-                    <div class="input-box">
-                        <input type="email" placeholder="Email" required>
-                        <!-- <i class="uil uil-envelope-alt email"></i> -->
-                    </div>
+            
                     <!-- input password -->
                     <div class="input-box">
-                        <input type="password" placeholder="Create password" required>
+                        <input class="pw" type="password" placeholder="Create password" required>
                         <!-- <i class="uil uil-lock password"></i>
                         <i class="uil uil-eye-slash pw_hide"></i> -->
                     </div>
                     <!-- confirm password -->
                     <div class="input-box">
-                        <input type="password" placeholder="Confirm password" required>
+                        <input class="confirm-pw" type="password" placeholder="Confirm password" required>
                         <!-- <i class="uil uil-lock password"></i>
                         <i class="uil uil-eye-slash pw_hide"></i> -->
                     </div>
                     <!-- login button -->
-                    <button class="button">Sign Up</button>
+                    <button class="button" id="sign-submit">Sign Up</button>
                     <!-- register button -->
                     <div class="login-signup">Already have an account? <a href="#" id="login">Log In</a></div>
                 </form>
