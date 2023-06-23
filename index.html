@@ -13,32 +13,47 @@
     <header class="header">
         <!-- navigation bar -->
         <nav class="nav">
-            <a href="#" class="nav-logo">SpikeZone</a>
             <ul class="nav-menu">
-                <li class="nav-item"></li>
-            </ul> <!-- to make the navbar horizontal -->
-            <button class="button" id="form-open">Login</button>
-            <div class="user-profile hidden dropdown">
-                <!-- NOTE: only used as template -->
-                <img class="pfp" src="raze.jpg">
-                <div class="nav-username">mar_v</div>
-                
-                <div class="dropdown-content">
-                    <a href="#"> Profile</a>
-                    <a href="#"> Log Out</a>
-                </div>
-                
-            </div>
+                <li class="nav-menu-logo"><a href="index.html" class="nav-logo"><img src="logo.png" class="logo"></a></li>
+                <li ><a href="index.html" class="nav-logo">SpikeZone</a></li>
+            </ul>
+            
+            <div class="nav-right">
+                <ul class="nav-menu-right">
+                    <li id="search">
+                        <button id="search-btn">🔍︎</button>
+                        <input type="text" id="search-input" placeholder="Search Forum">
+                    </li>
+                    <li>
+                        <button class="button" id="form-open">Login</button>
+                    </li>
+                    <li>
+                        <div class="user-profile hidden dropdown">
+                            <!-- NOTE: only used as template -->
+                            <div class="dropbtn">
+                                <ul class="nav-menu-dropdown">
+                                    <li><img class="pfp" src="default.jpg"></li>
+                                    <li><div class="nav-username"> hello</div></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-content">
+                                <a href="#"> Profile</a>
+                                <a href="#" class="logout">Logout</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+        </div>
         </nav>
     </header>
 
     <!-- HOME -->
     <section class="home">
         <div class="form-container">
-            <i class="uil uil-times form-close">X</i>
+            <i class="uil uil-times form-close">x</i><br>
             <!-- login form -->
             <div class="form login-form">
-                <form action="#">
+                <form action="#" class="form-log-sign">
                     <h2>Login</h2>
                     <div id="login-error-msg"></div>
                     <!-- input username -->
@@ -67,7 +82,7 @@
             </div>
             <!-- sign up form -->
             <div class="form signup-form">
-                <form action="#">
+                <form action="#" class="form-log-sign">
                     <h2>Sign Up</h2>
                     <!-- input username -->
                     <div id="sign-error-msg"></div>
