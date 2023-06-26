@@ -56,17 +56,14 @@ submitLogBtn.addEventListener("click",async(e)=>{
 
             //displays the user's username in navbar
             nav_un.textContent=login_un;
-            
         }
         else{
             errormsg.textContent="The password you've entered is incorrect.";
         }
-      
     }
     else{
         errormsg.textContent="Username does not exist";
     }
-
 });
 
 logoutBtn.addEventListener("click",async(e)=>{
@@ -79,8 +76,8 @@ logoutBtn.addEventListener("click",async(e)=>{
     nav_un.textContent="";
 
     //clears form
-    //ERROR: not wokring
-    document.querySelector(form).reset();
+    let forms = document.querySelectorAll(".form-log-sign");
+    forms.forEach((form) => form.reset());
 });
 
 // Allows user to create an account
@@ -125,35 +122,51 @@ submitSignBtn.addEventListener("click", async(e)=>{
     } 
 });
 
+// LOGIN AND SIGN UP FUNCTIONS
+handleLoginSignUp();
+function handleLoginSignUp() {
+    let signup = false;
+    // opens login form
+    formOpenBtn.addEventListener("click", () => {
+        home.classList.add("show");
+        formContainer.classList.remove("active");
+        signup=false;
+        closeLoginSignUp(signup);
+    });
 
-// shows the login button and exits it when X is pressed
-formOpenBtn.addEventListener("click", () => home.classList.add("show"));
-formCloseBtn.addEventListener("click", () => {
-    home.classList.remove("show"),
-    formContainer.classList.remove("active");
-});
+    // switches to signup form
+    signUpBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        formContainer.classList.add("active");
+        signup=true;
+        // DEBUG: console.log(signup);
+        closeLoginSignUp(signup);
+    });
+    //switches to signup form
+    loginBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        formContainer.classList.remove("active");
+        signup=false;
+        // DEBUG: console.log(signup);
+        closeLoginSignUp(signup);
+    });
+};
 
-// switches between login and register forms through the Login and Signup
-signUpBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    formContainer.classList.add("active");
-});
-loginBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    formContainer.classList.remove("active");
-});// shows the login button and exits it when X is pressed
-formOpenBtn.addEventListener("click", () => home.classList.add("show"));
-formCloseBtn.addEventListener("click", () => {
-    home.classList.remove("show"),
-    formContainer.classList.remove("active");
-});
 
-// switches between login and register forms through the Login and Signup
-signUpBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    formContainer.classList.add("active");
-});
-loginBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    formContainer.classList.remove("active");
-});
+function closeLoginSignUp(signup) {
+    // DEBUG: console.log("inside close: " + signup);
+    if (signup == true) {
+        formCloseBtn.addEventListener("click", () => {
+            home.classList.remove("show");
+            formContainer.classList.add("active");
+            // DEBUG: console.log(signup);
+        });
+    } else {
+        formCloseBtn.addEventListener("click", () => {
+            home.classList.remove("show");
+            formContainer.classList.remove("active");
+            // DEBUG: console.log(signup);
+        });
+    }
+}
+

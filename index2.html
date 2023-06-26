@@ -1,20 +1,18 @@
 <!DOCTYPE html>
+<html>
+
 <head>
-    <title>Navbar</title>
-    <!-- Unicons-->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/solid.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="index.css" />
+    <title>SpikeZone</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- HEADER -->
     <header class="header">
         <!-- navigation bar -->
         <nav class="nav">
             <ul class="nav-menu">
-                <li class="nav-menu-logo"><a href="index.html" class="nav-logo"><img src="logo.png" class="logo"></a></li>
+                <li class="nav-menu-logo"><a href="index.html" class="nav-logo"><img src="images/logo.png" class="logo"></a></li>
                 <li ><a href="index.html" class="nav-logo">SpikeZone</a></li>
             </ul>
             
@@ -25,14 +23,14 @@
                         <input type="text" id="search-input" placeholder="Search Forum">
                     </li>
                     <li>
-                        <button class="button" id="form-open">Login/Register</button>
+                        <button class="button" id="form-open">Login</button>
                     </li>
                     <li>
-                        <div class="user-profile hidden dropdown">
+                        <div class="user-profile hidden nav-dropdown">
                             <!-- NOTE: only used as template -->
-                            <div class="dropbtn">
+                            <div class="nav-dropbtn">
                                 <ul class="nav-menu-dropdown">
-                                    <li><img class="pfp" src="default.jpg"></li>
+                                    <li><img class="nav-pfp" src="default.jpg"></li>
                                     <li><div class="nav-username"> hello</div></li>
                                 </ul>
                             </div>
@@ -43,12 +41,11 @@
                         </div>
                     </li>
                 </ul>
-        </div>
+            </div>
         </nav>
     </header>
-
-    <!-- HOME -->
-    <section class="home">
+    <div class="home">
+        <!-- forms -->
         <div class="form-container">
             <i class="uil uil-times form-close">x</i><br>
             <!-- login form -->
@@ -110,8 +107,88 @@
                 </form>
             </div>
         </div>
-    </section>
-    
+
+        <!-- main -->
+        <span id="left-pane">
+            <!--add icons-->
+            <ul class="tags">
+                <button class="start-discussion-btn">Start Discussion</button>
+                <li><a href="#">
+                        <div class="tag">
+                            <img class="icon" src="images/fade-icon.png" height=20px width=20px>
+                            General Discussion
+                        </div>
+                    </a></li>
+                <li><a href="#">
+                        <div class="tag">
+                             <img class="icon" src="images/fade-icon.png" height=20px width=20px>
+                            LFT
+                        </div>
+                    </a></li>
+                <li><a href="#">
+                        <div class="tag">
+                             <img class="icon" src="images/fade-icon.png" height=20px width=20px>
+                            Technical Issues
+                        </div>
+                    </a></li>
+                <li><a href="#">
+                        <div class="tag">
+                             <img class="icon" src="images/fade-icon.png" height=20px width=20px>
+                            Off Topic
+                        </div>
+                    </a></li>
+            </ul>
+
+        </span>
+
+        <span id="right-pane">
+            <!--redo dropdown-->
+            <div class="filters">
+                <div class="dropdown">
+                    <button class="dropbtn">Top</button>
+                    <div class="dropdown-content">
+                        <a href="#">Latest</a>
+                        <a href="#">Top</a>
+                        <a href="#">Newest</a>
+                        <a href="#">Oldest</a>
+                    </div>
+                </div>
+
+                <!--refresh button-->
+            </div>
+
+
+
+            <div class="posts">
+
+                <div class="post-item">
+                    <img class="pfp" src="images/fade-icon.png" height=50px width=50px>
+                    <span class="details">
+                        <div class="top-row">
+                            <span class="title">This is a title.</span>
+                            <div class="post-metadata">
+                                <span class="post-tag">
+                                    <img src="images/fade-icon.png" height=15px width=15px>
+                                    General Discussion
+                                </span>
+                                <span class="comment-cnt">
+                                    <img src="images/fade-icon.png" height=15px width=15px>
+                                    50</span>
+                            </div>
+
+                        </div>
+
+                        <div class="status"><b>aeririyel</b> started 2 hours ago</div>
+                        <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel iaculis nulla. Integer cursus ligula et diam congue placerat...</div>
+                    </span>
+                </div>
+
+
+            </div>
+        </span>
+
+    </div>
+
     <script src="index.js"></script>
-</body>
-</html>
+
+</body></html>

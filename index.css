@@ -10,6 +10,13 @@ a {
     color: #FF4654;
 }
 
+/* Remove bullets */
+ul {
+    list-style-type: none; 
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+}
+
 /* HEADER */
 .header {
     position: fixed;
@@ -221,14 +228,7 @@ a {
     color: #fff;
 }
 
-/* Remove bullets */
-ul {
-    list-style-type: none; 
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margins */
-}
-
-/*Nav bar pfp*/
+/*nav bar pfp*/
 .pfp{
     border-radius:100%;
     height:100%;
